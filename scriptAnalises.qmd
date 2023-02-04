@@ -1,0 +1,43 @@
+---
+title: "LB 2020"
+author: Wellington Santos Souza
+date: "`r format(Sys.Date())`" 
+lang: pt 
+format:
+  html:
+    toc: true
+    geometry: 
+      - top=30mm
+      - left=30mm
+      - right=20mm
+      - heightrounded 
+bibliography: references.bib 
+params:
+ano: "2023" 
+---
+
+### INTRODUÇÃO
+
+Os dados utilizado para as análises foram coletados pelo Latinobarómetro; que é uma pesquisa de opinião pública que aplica anualmente cerca de 20.000 entrevistas em 18 países da América Latina, representando mais de 600 milhões de habitantes.
+
+A Corporação Latinobarómetro é uma ONG sem fins lucrativos com sede em Santiago, Chile, responsável única pela produção e publicação dos dados.
+
+A Corporação Latinobarómetro investiga o desenvolvimento da democracia, da economia e da sociedade como um todo, usando indicadores de opinião pública que medem atitudes, valores e comportamentos. Os resultados são usados por atores sociopolíticos da região, atores internacionais, governamentais e meios de comunicação [@latinoba].
+
+## Metodologia
+
+Os dados foram baixados em formato .rds
+
+base dados
+
+```{r}
+datos <- readRDS("Latinobarometro_2020_Esp_Rds_v1_0.rds")
+```
+
+```{r}
+#| column: page
+
+knitr::kable(
+  datos[1:6, 1:10]
+)
+```
